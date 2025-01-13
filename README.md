@@ -1,0 +1,1 @@
+um jogo simple de bingo
