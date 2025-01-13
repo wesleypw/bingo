@@ -8,6 +8,8 @@ class BingoGame:
         # Configuração inicial da janela principal
         self.root = root
         self.root.title("Bingo Game")
+        self.root.config(bg="AliceBlue")
+        self.root.geometry("500x700")
 
         # Cria a cartela do jogador com números aleatórios
         self.player_card = self.generate_card()
@@ -39,7 +41,7 @@ class BingoGame:
         self.current_number_label.pack(pady=10)
 
         # Label para exibir todos os números sorteados
-        self.called_numbers_label = tk.Label(self.root, text="Números sorteados: ", font=("Arial", 12))
+        self.called_numbers_label = tk.Label(self.root, text="Números sorteados: ", font=("Arial", 12), wraplength=400)
         self.called_numbers_label.pack(pady=10)
 
     # Método para gerar a cartela do jogador
@@ -49,7 +51,7 @@ class BingoGame:
             column_range = range(i * 15 + 1, i * 15 + 16)  # Define o intervalo de números para a coluna
             column_numbers = random.sample(column_range, 5)  # Seleciona 5 números aleatórios sem repetição
             card.append(column_numbers)  # Adiciona a coluna à cartela
-        card[2][2] = "FREE"  # Espaço livre no centro da cartela
+        card[2][2] = "LIVRE"  # Espaço livre no centro da cartela
         return card
 
     # Método para sortear um número
@@ -79,7 +81,7 @@ class BingoGame:
             for j in range(5):  # Percorre as colunas da cartela
                 if self.player_card[i][j] == number:  # Se o número estiver na cartela
                     # Atualiza o botão correspondente para indicar o número sorteado
-                    self.card_buttons[i][j].config(bg="green", state="disabled")
+                    self.card_buttons[i][j].config(bg="green", fg="white") 
 
 # Inicializa o jogo de Bingo
 if __name__ == "__main__":
