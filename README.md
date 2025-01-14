@@ -1,3 +1,3 @@
 um jogo simple de bingo 
 <br>
-como uma cor salmão.
+com uma cor de salmão.
