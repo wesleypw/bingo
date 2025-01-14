@@ -8,8 +8,19 @@ class BingoGame:
         # Configuração inicial da janela principal
         self.root = root
         self.root.title("Bingo Game")
-        self.root.config(bg="AliceBlue")
-        self.root.geometry("500x700")
+        self.root.config(bg="red")
+        self.root.geometry("700x800")
+
+        freme_proncipal = tk.Frame(self.root, bg="red") 
+        freme_proncipal.pack(expand=True, padx=10, pady=10)
+
+        titilo = tk.Label(freme_proncipal, 
+                     text="BINGO", 
+                     font=('Arial', 20, 'bold'),
+                     bg='red',
+                     fg='white',
+                     pady=10)
+        titilo.pack()
 
         # Cria a cartela do jogador com números aleatórios
         self.player_card = self.generate_card()
